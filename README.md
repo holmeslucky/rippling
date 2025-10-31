@@ -1,14 +1,58 @@
 # Rippling Time Tracking Integration for Capitol Engineering
 
-This system connects to your Rippling account to pull time tracking data and generate daily labor reports for project monitoring by foremen.
+Complete time tracking system with Rippling API integration, three demo versions, and live web hosting.
 
-Date created: 2025-10-30
+**Company:** Capitol Engineering (www.capitolaz.com)
+**Live Demo:** https://capitol-engineering-demo.onrender.com
+**GitHub:** https://github.com/holmeslucky/rippling.git
+**Date:** 2025-10-30
 
-## DEMO MODE AVAILABLE
+---
 
-Want to see it in action before setting up? **Double-click START_DEMO.bat** for a fully functional demo with sample data - perfect for presentations!
+## THREE DEMO VERSIONS - CHOOSE YOUR AUDIENCE
 
-See DEMO_README.md and DEMO_GUIDE.md for demo instructions.
+### Standard Demo - For Foremen (5 min)
+**Double-click:** `START_DEMO.bat`
+Simple dashboard showing project summaries and employee hours. No training needed.
+
+### Enhanced Demo - For Management (10-15 min)
+**Double-click:** `START_DEMO_ENHANCED.bat`
+Analytics with 3 charts, API documentation, and complete employee roster.
+**Also live at:** https://capitol-engineering-demo.onrender.com
+
+### ULTRA Demo - For Executives (15-20 min)
+**Double-click:** `START_DEMO_ULTRA.bat`
+Shows complete future vision: cost tracking, overtime prediction, AI alerts, and feature roadmap.
+
+**All demos run at:** http://localhost:5000
+
+---
+
+## QUICK START
+
+**Want to demo immediately?**
+1. Double-click any of the START_DEMO_*.bat files above
+2. Browser opens automatically
+3. See QUICK_START_GUIDE.md for presentation tips
+
+**Want to use with real Rippling data?**
+1. Get API token from Rippling
+2. Add to `.env` file
+3. Run `python foreman_dashboard.py`
+
+---
+
+## COMPLETE DOCUMENTATION
+
+- **QUICK_START_GUIDE.md** - Fast demo guide
+- **PRESENTATION_OUTLINE.md** - 20-minute presentation script
+- **COMPLETE_SYSTEM_SUMMARY.md** - Full system documentation
+- **DEMO_VERSIONS.md** - Comparison of all three demos
+- **FUTURE_FEATURES_BRAINSTORM.md** - 30+ planned features
+- **CHANGELOG.md** - Version history
+- **DEPLOY_TO_RENDER.md** - Web hosting guide
+
+---
 
 ## Features
 
