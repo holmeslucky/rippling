@@ -12,7 +12,14 @@
       "Bash(git remote add origin https://github.com/holmeslucky/rippling.git)",
       "Bash(git branch -M main)",
       "Bash(git add -A)",
-      "Bash(git commit -m \"Add all project files - Complete Rippling integration system\")"
+      "Bash(git commit -m \"Add all project files - Complete Rippling integration system\")",
+      "Bash(git push -u origin main)",
+      "Bash(git add render.yaml)",
+      "Bash(git commit -m \"Add render.yaml for deployment configuration\")",
+      "Bash(git push origin main)",
+      "Bash(git add demo_mode_enhanced.py)",
+      "Bash(git commit -m \"Fix: Use PORT environment variable for Render deployment\")",
+      "Bash(git commit -m \"Add ULTRA demo with cost tracking, overtime prediction, AI alerts, and future features roadmap\")"
     ],
     "deny": [],
     "ask": []

@@ -36,16 +36,35 @@ class DemoDataGenerator:
             {"id": "emp_015", "first_name": "Kevin", "last_name": "Jackson", "employee_id": "CE-115", "role": "Detailer"},
         ]
 
-        # Capitol Engineering active projects
+        # Capitol Engineering active projects with budgets and rates
         self.projects = [
-            {"code": "25-2126", "name": "Lithium Nevada - Thacker Pass Ducting", "type": "Fabrication"},
-            {"code": "25-2350", "name": "Forest Energy - Stack Ducting", "type": "Fabrication"},
-            {"code": "25-2117", "name": "Industrial Complex - Steel Frame", "type": "Structural"},
-            {"code": "25-2574", "name": "Mining Support Structure", "type": "Structural"},
-            {"code": "SHOP", "name": "Shop Maintenance & Cleanup", "type": "Internal"},
-            {"code": "25-1998", "name": "Refinery Platform Assembly", "type": "Fabrication"},
-            {"code": "25-2201", "name": "Water Treatment Piping", "type": "Piping"},
+            {"code": "25-2126", "name": "Lithium Nevada - Thacker Pass Ducting", "type": "Fabrication",
+             "budget_hours": 320, "hourly_rate": 85, "estimated_total": 27200},
+            {"code": "25-2350", "name": "Forest Energy - Stack Ducting", "type": "Fabrication",
+             "budget_hours": 240, "hourly_rate": 85, "estimated_total": 20400},
+            {"code": "25-2117", "name": "Industrial Complex - Steel Frame", "type": "Structural",
+             "budget_hours": 480, "hourly_rate": 95, "estimated_total": 45600},
+            {"code": "25-2574", "name": "Mining Support Structure", "type": "Structural",
+             "budget_hours": 160, "hourly_rate": 95, "estimated_total": 15200},
+            {"code": "SHOP", "name": "Shop Maintenance & Cleanup", "type": "Internal",
+             "budget_hours": 999, "hourly_rate": 75, "estimated_total": 0},
+            {"code": "25-1998", "name": "Refinery Platform Assembly", "type": "Fabrication",
+             "budget_hours": 280, "hourly_rate": 90, "estimated_total": 25200},
+            {"code": "25-2201", "name": "Water Treatment Piping", "type": "Piping",
+             "budget_hours": 200, "hourly_rate": 80, "estimated_total": 16000},
         ]
+
+        # Labor rates by role
+        self.labor_rates = {
+            "Welder": 35,
+            "Fabricator": 32,
+            "Fitter": 30,
+            "Painter": 28,
+            "QC Inspector": 38,
+            "Foreman": 45,
+            "Detailer": 40,
+            "Admin": 25
+        }
 
         # Job dimensions
         self.dimensions = [
