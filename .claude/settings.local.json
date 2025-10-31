@@ -3,7 +3,10 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:developer.rippling.com)",
-      "Bash(dir /b)"
+      "Bash(dir /b)",
+      "Bash(git --version)",
+      "Bash(git init)",
+      "Bash(git add .)"
     ],
     "deny": [],
     "ask": []
