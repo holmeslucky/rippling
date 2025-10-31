@@ -1053,6 +1053,9 @@ def create_enhanced_html_template():
 if __name__ == '__main__':
     create_enhanced_html_template()
 
+    # Get port from environment variable (for production hosting) or use 5000 for local
+    port = int(os.environ.get('PORT', 5000))
+
     print("\n" + "="*70)
     print("CAPITOL ENGINEERING - ENHANCED DEMO MODE")
     print("="*70)
@@ -1063,8 +1066,8 @@ if __name__ == '__main__':
     print("  - Employee utilization tracking")
     print("  - Advanced filtering and search")
     print("  - Weekly trend analysis")
-    print("\nDemo Dashboard: http://localhost:5000")
+    print(f"\nDemo Dashboard: http://localhost:{port}")
     print("\nPress Ctrl+C to stop the demo server")
     print("="*70 + "\n")
 
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
