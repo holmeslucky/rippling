@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:developer.rippling.com)",
+      "Bash(dir /b)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
