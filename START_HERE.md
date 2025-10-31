@@ -50,12 +50,14 @@ See ENHANCED_DEMO_FEATURES.md for comparison.
 
 Host your demo online for access from anywhere!
 
-### Quick Deploy:
-**Double-click: QUICK_DEPLOY.bat**
+### Quick Deploy to Your GitHub:
+**Double-click: DEPLOY_NOW.bat**
 
-Or read: **DEPLOY_TO_RENDER.md** for step-by-step guide
+This deploys to: https://github.com/holmeslucky/rippling.git
 
-**Result:** Your demo live at https://your-demo.onrender.com
+Or read: **YOUR_REPO_DEPLOY.md** for step-by-step guide
+
+**Result:** Your demo live at https://capitol-engineering-demo.onrender.com
 
 **Perfect for:**
 - Remote presentations
