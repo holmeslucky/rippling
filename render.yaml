@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: capitol-engineering-demo
+    env: python
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn demo_mode_enhanced:app
+    plan: free
+    healthCheckPath: /
