@@ -4,6 +4,6 @@ services:
     env: python
     branch: main
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn demo_mode_ultra:app
+    startCommand: gunicorn demo_mode_professional:app
     plan: free
     healthCheckPath: /
