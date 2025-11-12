@@ -1,1 +1,1 @@
-web: gunicorn demo_mode_ultra:app
+web: gunicorn demo_mode_professional:app

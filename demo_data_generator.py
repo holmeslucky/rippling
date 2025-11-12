@@ -186,7 +186,13 @@ class DemoDataGenerator:
 
     def generate_sample_employees(self) -> List[Dict]:
         """Get the list of demo employees"""
-        return self.employees
+        # Add combined name field
+        employees_with_names = []
+        for emp in self.employees:
+            emp_copy = emp.copy()
+            emp_copy['name'] = f"{emp['first_name']} {emp['last_name']}"
+            employees_with_names.append(emp_copy)
+        return employees_with_names
 
     def generate_sample_projects(self) -> List[Dict]:
         """Get the list of demo projects"""
