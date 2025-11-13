@@ -1,1 +1,1 @@
-web: gunicorn demo_mode_professional:app
+web: gunicorn demo_mode_workforce:app

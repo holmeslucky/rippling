@@ -4,7 +4,147 @@ All notable changes to this project are documented here.
 
 ---
 
-## [1.7.0] - 2025-11-11 21:50 (Latest)
+## [1.8.0] - 2025-11-12 20:30 (Latest)
+
+### Added - Workforce-Style Project Dashboard
+- Created `demo_mode_workforce.py` - QuickBooks Workforce-inspired project dashboard
+  - Project overview page with grid layout of all active projects
+  - Individual project detail pages with drill-down capability
+  - Two-tab interface: "By Estimates" and "By Users"
+  - Complete project metrics dashboard with real-time calculations
+  - Drill-down modal for detailed timesheet entries
+  - Click any project card to view full project details
+  - Back button to return to overview
+- Created `budget_manager.py` - SQLite database for project budgets
+  - CRUD operations for projects and tasks
+  - Task-level budget tracking with estimated hours
+  - JSON import/export functionality
+  - Project metadata: start date, target date, hourly rates
+  - Persistent storage in budgets.db
+- Created `data_merger.py` - Combines time tracking with budget data
+  - Merges Rippling API data with budget database
+  - Calculates budget usage percentage, remaining hours, status
+  - Task-level actual vs estimated comparison
+  - Employee labor distribution calculations
+  - Supports both demo mode and live Rippling API
+- Created `templates/workforce_dashboard.html` - Modern responsive UI
+  - Project overview with summary cards (Total, On Track, At Risk, Over Budget)
+  - Search and filter functionality (by name, code, or status)
+  - Professional color-coded status system
+  - Progress bars with visual budget tracking
+  - Animated transitions and hover effects
+  - Mobile-responsive design
+
+### Features - By Estimates Tab
+- Task breakdown table showing all project tasks
+- Columns: Task Name, Estimated Hours, Actual Hours, Remaining, % Complete, Status
+- Visual status badges (On Track, At Risk, Over Budget, Early Stage)
+- Click any hours value to see detailed timesheet entries
+- Automatic status calculation based on budget usage
+- Real-time percentage complete tracking
+- Totals row with project-wide metrics
+
+### Features - By Users Tab
+- Employee labor allocation table
+- Columns: Employee, Role, Hours Worked, % of Total, Actions
+- Sortable by any column
+- "View Entries" button to drill down into individual timesheets
+- Shows labor distribution across the team
+- Percentage of total labor per employee
+- Role-based organization (Welder, Fabricator, Foreman, etc.)
+
+### Features - Drill-Down Modal
+- Detailed timesheet entries popup
+- Filterable by employee or task
+- Shows: Date, Employee, Task, Hours, Clock In/Out times
+- Clean table layout with sorting
+- Click outside or X button to close
+- Loads data dynamically from API
+
+### Features - Project Detail View
+- Comprehensive project header with 6 key metrics
+- Visual progress bar showing budget usage
+- Status-based color coding throughout
+- Export to Excel button for individual projects
+- Quick navigation back to overview
+- Real-time data refresh capability
+
+### API Endpoints
+- GET /api/projects - All projects with budget and actual data
+- GET /api/project/<code> - Single project detail
+- GET /api/project/<code>/tasks - Task breakdown
+- GET /api/project/<code>/users - Employee hours
+- GET /api/project/<code>/timesheets - Detailed entries (filterable)
+- GET /api/export/excel/<code> - Export project to Excel
+- POST /api/budget/<code> - Add/update project budget
+- GET /api/summary - Dashboard summary statistics
+
+### Database Schema
+- Projects table: project_code, project_name, budget_hours, hourly_rate, start_date, target_end_date, status
+- Tasks table: project_code, task_name, estimated_hours, sort_order
+- Foreign key relationships with cascade delete
+- Timestamps for created_at and updated_at
+- Support for active/inactive project status
+
+### Excel Export Features
+- Multi-sheet workbook per project
+- Summary sheet with all project metrics
+- Tasks sheet with estimated vs actual comparison
+- Labor sheet with employee hours breakdown
+- Timesheets sheet with all detailed entries
+- Auto-formatted columns and headers
+- Date-stamped filenames
+
+### Calculated Metrics
+- Budget Usage Percentage = (Actual Hours / Budget Hours) × 100
+- Hours Remaining = Budget Hours - Actual Hours
+- Crew Size = Count of unique employees
+- Task Percent Complete = (Actual Hours / Estimated Hours) × 100
+- Status Logic:
+  - Over Budget: Usage >= 100%
+  - At Risk: Usage >= 90%
+  - On Track: Usage 20-90%
+  - Early Stage: Usage < 20%
+
+### Demo Data
+- 6 sample projects with realistic budgets
+- Each project has 3-4 tasks with estimated hours
+- 15 sample employees with various roles
+- 7 days of simulated timesheet entries
+- Randomized but realistic hour distributions
+- Task-level hour tracking
+- Employee labor allocation
+
+### Purpose
+- Modern QuickBooks Workforce-style interface for Capitol Engineering
+- Project-focused navigation (click to drill down)
+- Budget tracking with estimated vs actual hours
+- Task-level visibility into project progress
+- Employee labor distribution analysis
+- Drill-down capability to see all timesheet details
+- Ready for Rippling API integration when available
+- Professional presentation for management and clients
+
+### Rippling API Compatibility
+- Designed to work with Rippling API structure
+- Time entries mapped to projects via job_code
+- Employee data integration ready
+- Budget data stored externally (Rippling limitation)
+- Seamless transition from demo to production
+- No UI changes needed when connecting to real API
+
+### Technical Stack
+- Flask 3.0+ web framework
+- SQLite database for budget storage
+- Pandas for Excel generation
+- OpenPyXL for spreadsheet formatting
+- Pure JavaScript (no frameworks) for frontend
+- Responsive CSS with modern design
+- CORS enabled for API access
+
+---
+
+## [1.7.0] - 2025-11-11 21:50
 
 ### Added - Production-Ready Features Suite
 - Excel Export Functionality
@@ -358,6 +498,7 @@ www.capitolaz.com
 - **v1.5.0** - Professional dashboard with employee details per project
 - **v1.6.0** - Comprehensive search and filter system with real-time filtering
 - **v1.7.0** - Production-ready features: Excel export, date picker, employee chips, print view
+- **v1.8.0** - Workforce-style project dashboard with drill-down, task tracking, and budget management
 
 ---
 
