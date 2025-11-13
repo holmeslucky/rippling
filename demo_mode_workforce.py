@@ -392,13 +392,15 @@ def get_summary():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+# Initialize sample data when module is loaded (for production deployment)
+init_sample_data()
+
+
 if __name__ == '__main__':
     import os
 
     print("Initializing Capitol Engineering Workforce Dashboard...")
-
-    # Initialize sample data
-    init_sample_data()
+    print("Sample data already initialized")
 
     print("\nStarting server...")
     port = int(os.environ.get('PORT', 5000))
